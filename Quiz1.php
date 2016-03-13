@@ -8,9 +8,9 @@
   <body>
   <?php
     $index = 0;
-    $questions=array("Wer war Hitler?", "Was hat er mit dem zweiten Weltkrieg zu tun?");
-    $answers=array(array("Pr&auml;sident von Deutschland","Pr&auml;sident von den USA","Diktator von Deutschland"), array("Hat ihn gewonnen", "Hat Diplomatie get&auml;tigt", "Hat ihn verursacht"));
-    $correct_answers=array("Diktator von Deutschland", "Hat ihn verursacht");
+    $questions=array("Who is Putin", "Who is Trump?");
+    $answers=array(array("President of Russia","President of the US","Dictator of Russia"), array("presidential canidate of the US", "presidential canidate of Germany", "President of Germany"));
+    $correct_answers=array("Dictator of Russia", "presidential canidate of the US");
     foreach($questions as $value => $Frage) {
       echo "$Frage<br>";
       $antwort = "antwort$index";
