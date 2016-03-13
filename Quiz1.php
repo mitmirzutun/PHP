@@ -38,21 +38,21 @@
         switch($_POST[$antwort]) {
           case $Antwort1:
             if (!$Antwort1 == $correct_answers[$value]) {
-              echo "Das war die falsche Antwort.<br>";
+              echo "This was the wrong answer.<br>";
             } else {
-              echo "Das war die richtige Antwort.<br>";
+              echo "This was the right answer.<br>";
             }break;
           case $Antwort2:
             if (!$Antwort2 == $correct_answers[$value]) {
-              echo "Das war die falsche Antwort.<br>";
+              echo "This was the wrong answer.<br>";
             } else {
-              echo "Das war die richtige Antwort.<br>";
+              echo "This was the right answer.<br>";
             }break;
           case $Antwort3:
             if (!$Antwort3 == $correct_answers[$value]) {
-              echo "Das war die falsche Antwort.<br>";
+              echo "This was the wrong answer.<br>";
             } else {
-              echo "Das war die richtige Antwort.<br>";
+              echo "This was the right answer.<br>";
             }break;
          }
       }
