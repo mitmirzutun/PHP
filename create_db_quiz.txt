@@ -1,0 +1,52 @@
+# mariadb.org binary distribution
+# cd C:\xampp\mysql\bin>
+# mysql -uroot -p
+
+show databases;
+
+CREATE DATABASE QUIZ default charset latin1;
+
+USE QUIZ; 
+
+CREATE TABLE FRAGEN (
+fragen_id bigint auto_increment primary key,
+themen_id bigint,
+fragen_text varchar(128) charset utf8,
+korrekte_antwort bigint
+) ;
+
+
+CREATE TABLE ANTWORTEN (
+antwort_id bigint auto_increment primary key,
+fragen_id bigint,
+antwort_text varchar(128) charset utf8
+) ;
+
+
+CREATE TABLE THEMEN (
+themen_id bigint auto_increment primary key,
+themen_text varchar(128) charset utf8
+) ;
+
+INSERT INTO THEMEN (themen_id, themen_text) VALUES (NULL, "Geschichte");
+
+
+INSERT INTO  FRAGEN (fragen_id, themen_id, fragen_text, korrekte_antwort) 
+SELECT NULL, themen_id, "Wer war Hitler?", NULL from THEMEN where themen_text = "Geschichte";
+
+INSERT INTO ANTWORTEN (antwort_id, fragen_id, antwort_text) 
+SELECT NULL, fragen_id, "Pr&auml;sident von Deutschland" FROM FRAGEN where fragen_text = "Wer war Hitler?";
+INSERT INTO ANTWORTEN (antwort_id, fragen_id, antwort_text) 
+SELECT NULL, fragen_id, "Pr&auml;sident von den USA" FROM FRAGEN where fragen_text = "Wer war Hitler?";
+INSERT INTO ANTWORTEN (antwort_id, fragen_id, antwort_text) 
+SELECT NULL, fragen_id, "Diktator von Deutschland" FROM FRAGEN where fragen_text = "Wer war Hitler?";
+
+UPDATE FRAGEN SET korrekte_antwort = (SELECT antwort_id from ANTWORTEN where antwort_text = "Diktator von Deutschland" and fragen_id = 1) 
+where fragen_id = 1;
+
+SELECT * from THEMEN;
+SELECT * from FRAGEN;
+SELECT * from ANTWORTEN;
+
+
+
