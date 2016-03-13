@@ -8,8 +8,8 @@
   <body>
   <?php
     $index = 0;
-    $questions=array("Who is Putin", "Who is Trump?");
-    $answers=array(array("President of Russia","President of the US","Dictator of Russia"), array("presidential canidate of the US", "presidential canidate of Germany", "President of Germany"));
+    $questions=array("Who is Putin", "Which Position had Russia in the two World Wars?", "Who is Trump?");
+    $answers=array(array("President of Russia","President of the US","Dictator of Russia"), array("Enermy of Germany", "Ally of Germany","Neural to Germany"), array("presidential canidate of the US", "presidential canidate of Germany", "President of Germany"));
     $correct_answers=array("Dictator of Russia", "presidential canidate of the US");
     foreach($questions as $value => $Frage) {
       echo "$Frage<br>";
