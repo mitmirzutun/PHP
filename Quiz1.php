@@ -8,9 +8,9 @@
   <body>
   <?php
     $index = 0;
-    $questions=array("Wer war Hitler?", "Was hat er mit dem zweiten Weltkrieg zu tun?");
-    $answers=array(array("Pr&auml;sident von Deutschland","Pr&auml;sident von den USA","Diktator von Deutschland"), array("Hat ihn gewonnen", "Hat Diplomatie get&auml;tigt", "Hat ihn verursacht"));
-    $correct_answers=array("Diktator von Deutschland", "Hat ihn verursacht");
+    $questions=array("Who is Putin", "Which Position had Russia in the two World Wars?", "Who is Trump?");
+    $answers=array(array("President of Russia","President of the US","Dictator of Russia"), array("Enermy of Germany", "Ally of Germany","Neural to Germany"), array("presidential canidate of the US", "presidential canidate of Germany", "President of Germany"));
+    $correct_answers=array("Dictator of Russia", "presidential canidate of the US");
     foreach($questions as $value => $Frage) {
       echo "$Frage<br>";
       $antwort = "antwort$index";
@@ -38,21 +38,21 @@
         switch($_POST[$antwort]) {
           case $Antwort1:
             if (!$Antwort1 == $correct_answers[$value]) {
-              echo "Das war die falsche Antwort.<br>";
+              echo "This was the wrong answer.<br>";
             } else {
-              echo "Das war die richtige Antwort.<br>";
+              echo "This was the right answer.<br>";
             }break;
           case $Antwort2:
             if (!$Antwort2 == $correct_answers[$value]) {
-              echo "Das war die falsche Antwort.<br>";
+              echo "This was the wrong answer.<br>";
             } else {
-              echo "Das war die richtige Antwort.<br>";
+              echo "This was the right answer.<br>";
             }break;
           case $Antwort3:
             if (!$Antwort3 == $correct_answers[$value]) {
-              echo "Das war die falsche Antwort.<br>";
+              echo "This was the wrong answer.<br>";
             } else {
-              echo "Das war die richtige Antwort.<br>";
+              echo "This was the right answer.<br>";
             }break;
          }
       }
