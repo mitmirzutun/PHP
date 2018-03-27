@@ -1,5 +1,6 @@
 <?php
 //Defining the files
+$addNA = False;
 $in = file("migr_asyappctza.tsv");
 $out = fopen("migr_asyappctza_unpivot.csv", "w+");
 
@@ -16,7 +17,11 @@ for ($k = 1; $k < count($in); $k++) {
     }
     $data_out = $in_array_lineK[0] . "," . $jear . ",";
     if ($in_array_lineK[$i] === ": " or $in_array_lineK[$i] === ": \n") {
-      $data_out .= "N/A";
+      if ($addNA == True) {
+        $data_out .= "N/A";
+      } elif ($addNA == False) {
+        $data_out .= "";
+      }
     } else {
       $data_out .= $in_array_lineK[$i];
     }
