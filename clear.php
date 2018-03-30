@@ -13,9 +13,9 @@ for ($k = 1; $k < count($in); $k++) {
   for($i = 1; $i < count($in_array_line1); $i++){
     $jear = "";   //Correcting the year
     for ($j = 0; $j < 4; $j++) {
-      $jear .= $in_array_line1[$i][$j];
+      $year .= $in_array_line1[$i][$j];
     }
-    $data_out = $in_array_lineK[0] . "," . $jear . ",";
+    $data_out = $in_array_lineK[0] . "," . $year . ",";
     if ($in_array_lineK[$i] === ": " or $in_array_lineK[$i] === ": \n") {
       if ($addNA == True) {
         $data_out .= "N/A";
