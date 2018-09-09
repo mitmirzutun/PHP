@@ -23,7 +23,7 @@ for ($k = 1; $k < count($in); $k++) {
     if ($in_array_lineK[$i] === ": " or $in_array_lineK[$i] === ": \n") {
       $data_out .= $valueWhenTheresNoData;
     } else {
-      $data_out .= trim($in_array_lineK[$i];,"bcdefinprsuz") //removes the flags and footnotes
+      $data_out .= trim($in_array_lineK[$i],"bcdefinprsuz"); //removes the flags and footnotes
     }
     $data_out .= "\n";
     fwrite($out, $data_out);
